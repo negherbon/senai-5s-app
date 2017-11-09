@@ -22,21 +22,21 @@
               Bem Vindo
             </ion-card-header>     
             <ion-card-content>
-              <form id="form-login">              
+              <form id="form-login" (submit)="doLogin()">              
                 <ion-list>                 
                     <ion-item>
                       <ion-label floating>
                         <ion-icon name="md-contact"></ion-icon>
                         E-mail
                       </ion-label>
-                      <ion-input type="text"></ion-input>
+                      <ion-input type="text" [(ngModel)]="loginData.email" name="email"></ion-input>
                     </ion-item> 
                     <ion-item>
                       <ion-label floating>
                         <ion-icon name="md-lock"></ion-icon>
                         Senha
                       </ion-label>
-                      <ion-input type="password"></ion-input>
+                      <ion-input type="password" [(ngModel)]="loginData.password" name="password"></ion-input>
                     </ion-item>
                     <button ion-button class="button-form" type="submit" col-6 color="secondary">
                       <ion-label>

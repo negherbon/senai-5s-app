@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { ForgotPasswordPage } from '../forgot-password/forgot-password';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 /**
  * Generated class for the LoginPage page.
@@ -16,12 +17,56 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 })
 export class LoginPage {
 
+  private loading: any;
+  private loginData = { email:'', password:'' };
+  private data: any;
+
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams) {
-  }
+    public  navCtrl    : NavController, 
+    public  navParams  : NavParams,
+    public  authService: AuthServiceProvider, 
+    public  loadingCtrl: LoadingController, 
+    private toastCtrl  : ToastController
+  ) {}
 
   goToForgotPassWord(){
     this.navCtrl.push(ForgotPasswordPage);
   }
+
+  doLogin() {
+    this.showLoader();
+    this.authService.login(this.loginData).then((result) => {
+      this.loading.dismiss();
+      this.data = result;
+      localStorage.setItem('token', this.data.access_token);
+      //this.navCtrl.setRoot(TabsPage);
+    }, (err) => {
+      this.loading.dismiss();
+      this.presentToast(err);
+    });
+  }
+
+  showLoader(){
+    this.loading = this.loadingCtrl.create({
+        content: 'Entrando...'
+    });
+
+    this.loading.present();
+  }
+
+  presentToast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'bottom',
+      dismissOnPageChange: true
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
+  }
+
 }
