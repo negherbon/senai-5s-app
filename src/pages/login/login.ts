@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { DashboardPage } from '../dashboard/dashboard';
 
 /**
  * Generated class for the LoginPage page.
@@ -38,11 +39,11 @@ export class LoginPage {
     this.authService.login(this.loginData).then((result) => {
       this.loading.dismiss();
       this.data = result;
-      localStorage.setItem('token', this.data.access_token);
-      //this.navCtrl.setRoot(TabsPage);
+      localStorage.setItem('token', this.data.token);
+      this.navCtrl.setRoot(DashboardPage);
     }, (err) => {
       this.loading.dismiss();
-      this.presentToast(err);
+      this.presentToast(err._body);
     });
   }
 
@@ -63,7 +64,7 @@ export class LoginPage {
     });
 
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+      //console.log('Dismissed toast');
     });
 
     toast.present();
