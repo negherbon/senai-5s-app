@@ -13,12 +13,14 @@ import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password'
 import { ForgotPasswordPageModule } from '../pages/forgot-password/forgot-password.module';
 import { LoginPageModule } from '../pages/login/login.module';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    DashboardPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   entryComponents: [
     MyApp,
     LoginPage,
-    ForgotPasswordPage
+    ForgotPasswordPage,
+    DashboardPage
   ],
   providers: [
     StatusBar,
