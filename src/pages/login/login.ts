@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController, LoadingController
 import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { DashboardPage } from '../dashboard/dashboard';
+import { MainPage } from '../main/main';
 
 /**
  * Generated class for the LoginPage page.
@@ -40,7 +41,7 @@ export class LoginPage {
       this.loading.dismiss();
       this.data = result;
       localStorage.setItem('token', this.data.token);
-      this.navCtrl.setRoot(DashboardPage);
+      this.navCtrl.setRoot(MainPage);
     }, (err) => {
       this.loading.dismiss();
       this.presentToast(err._body);
