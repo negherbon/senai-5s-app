@@ -14,13 +14,17 @@ import { ForgotPasswordPageModule } from '../pages/forgot-password/forgot-passwo
 import { LoginPageModule } from '../pages/login/login.module';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { FooterTabsPage } from '../pages/footer-tabs/footer-tabs';
+import { MainPage } from '../pages/main/main';
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
     ForgotPasswordPage,
-    DashboardPage
+    DashboardPage,
+    FooterTabsPage,
+    MainPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
     MyApp,
     LoginPage,
     ForgotPasswordPage,
-    DashboardPage
+    DashboardPage,
+    FooterTabsPage,
+    MainPage
   ],
   providers: [
     StatusBar,
