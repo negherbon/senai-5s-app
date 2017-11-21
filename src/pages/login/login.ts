@@ -43,7 +43,13 @@ export class LoginPage {
       localStorage.setItem('token', this.data.token);
       this.navCtrl.setRoot(MainPage);
     }, (err) => {
-      this.loading.dismiss();
+      this.loading.dismiss();     
+      
+      if(err._body.type == 'error'){
+        this.presentToast('Falha ao se comunicar com o servidor');
+        return false;
+      }
+      
       this.presentToast(err._body);
     });
   }
