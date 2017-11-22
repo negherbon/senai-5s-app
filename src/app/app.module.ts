@@ -16,6 +16,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { FooterTabsPage } from '../pages/footer-tabs/footer-tabs';
 import { MainPage } from '../pages/main/main';
+import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MainPage } from '../pages/main/main';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthServiceProvider
+    AuthServiceProvider,
+    ConsumesApiProvider
   ]
 })
 export class AppModule {}
