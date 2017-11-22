@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-let apiUrl = 'http://localhost:4000/api/';
+let apiUrl = 'http://localhost:4000/';
 
 @Injectable()
 export class AuthServiceProvider {
