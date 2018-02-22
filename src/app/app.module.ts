@@ -15,7 +15,8 @@ import { LoginPageModule } from '../pages/login/login.module';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { FooterTabsPage } from '../pages/footer-tabs/footer-tabs';
-import { EvaluationsPage } from '../pages/evaluations/evaluations'; 
+import { EvaluationsPage } from '../pages/evaluations/evaluations';
+import { UserConfigPage } from '../pages/user-config/user-config';  
 import { MainPage } from '../pages/main/main';
 import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
 
@@ -27,6 +28,7 @@ import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
     DashboardPage,
     FooterTabsPage,
     EvaluationsPage,
+    UserConfigPage,
     MainPage
   ],
   imports: [
@@ -42,6 +44,7 @@ import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
     DashboardPage,
     FooterTabsPage,
     EvaluationsPage,
+    UserConfigPage,
     MainPage
   ],
   providers: [

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DashboardPage } from '../dashboard/dashboard';
-import { EvaluationsPage } from '../evaluations/evaluations'
+import { UserConfigPage } from '../user-config/user-config'
 
 /**
  * Generated class for the FooterTabsPage page.
@@ -18,5 +18,5 @@ import { EvaluationsPage } from '../evaluations/evaluations'
 export class FooterTabsPage {
 
   dashBoardPage = DashboardPage;
-  evaluationsPage = EvaluationsPage;
+  userConfigPage = UserConfigPage;
 }
