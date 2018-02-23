@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EvaluationResumePage } from '../evaluation-resume/evaluation-resume'
 
 /**
  * Generated class for the DashboardPage page.
@@ -16,6 +17,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class DashboardPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  goToEvaluationResume(){
+    this.navCtrl.push(EvaluationResumePage);
   }
 
   ionViewDidLoad() {
