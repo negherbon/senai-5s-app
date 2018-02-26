@@ -17,6 +17,7 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { FooterTabsPage } from '../pages/footer-tabs/footer-tabs';
 import { EvaluationsPage } from '../pages/evaluations/evaluations';
 import { EvaluationResumePage } from '../pages/evaluation-resume/evaluation-resume'
+import { EvaluationStartPage } from '../pages/evaluation-start/evaluation-start';
 import { UserConfigPage } from '../pages/user-config/user-config';  
 import { MainPage } from '../pages/main/main';
 import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
@@ -30,6 +31,7 @@ import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
     FooterTabsPage,
     EvaluationsPage,
     EvaluationResumePage,
+    EvaluationStartPage,
     UserConfigPage,
     MainPage
   ],
@@ -46,6 +48,7 @@ import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
     DashboardPage,
     FooterTabsPage,
     EvaluationsPage,
+    EvaluationStartPage,
     UserConfigPage,
     EvaluationResumePage,
     MainPage
