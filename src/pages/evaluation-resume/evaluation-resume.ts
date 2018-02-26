@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EvaluationStartPage } from '../evaluation-start/evaluation-start';
 
 /**
  * Generated class for the EvaluationResumePage page.
@@ -20,6 +21,10 @@ export class EvaluationResumePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EvaluationResumePage');
+  }
+
+  gotToEvaluationStart(){
+      this.navCtrl.push(EvaluationStartPage);
   }
 
 }
