@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -20,6 +20,13 @@ export class EvaluationStartPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EvaluationStartPage');
+  }
+
+  @ViewChild('myInput') myInput: ElementRef;
+  
+  resize() {
+    this.myInput.nativeElement.style.height = 'auto'
+    this.myInput.nativeElement.style.height = this.myInput.nativeElement.scrollHeight + 'px';
   }
 
 }
