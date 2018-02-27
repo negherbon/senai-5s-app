@@ -1,0 +1,49 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Senai 5s</ion-title>
+    </ion-navbar>
+  
+</ion-header>
+  
+  
+  <ion-content padding style="background-color: #3c9a7b">
+      
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 col-sm-6  class="evaluation-start-container">
+          <ion-card> 
+              <ion-card-header>
+              </ion-card-header> 
+              <h2>1 - O ambiente está devidamente iluminado?</h2>  
+              <ion-card-content>
+                <form id="form-evalution-start" (submit)="doEvaluation()">              
+                  <ion-list> 
+                      <ion-item>
+                        <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-up"></ion-icon>    
+                        <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-down"></ion-icon>
+                      </ion-item>                 
+                      <ion-item>
+                        <textarea #myInput class="evaluation-start-description" rows="3" maxLength="200" (keyup)="resize()" placeholder="Descrição"></textarea>                          
+                      </ion-item>                      
+                      <button ion-button class="button-form" type="submit" col-6 color="secondary">
+                        <ion-label>
+                          Próxima
+                        </ion-label>
+                      </button>
+                    </ion-list>
+                </form>
+              </ion-card-content>      
+            </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      
+  </ion-content>
+  
