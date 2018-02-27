@@ -28,12 +28,12 @@
                       <ion-row>
                         <ion-col col-06 push-1>
                           <ion-item>
-                            <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-up"></ion-icon>    
+                            <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-up" [ngStyle]="{'color': mdThumbsUp.color}" (click)="alternateColor('md-thumbs-up')"></ion-icon>    
                           </ion-item>
                         </ion-col>
                         <ion-col col-06 push-1>
                           <ion-item>
-                            <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-down"></ion-icon>    
+                            <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-down" [ngStyle]="{'color': mdThumbsDown.color}" (click)="alternateColor('md-thumbs-down')"></ion-icon>    
                           </ion-item>
                         </ion-col>
                       </ion-row>

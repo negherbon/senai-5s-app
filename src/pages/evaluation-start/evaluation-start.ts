@@ -15,6 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EvaluationStartPage {
 
+  private mdThumbsUp = { color: 'black'};
+  private mdThumbsDown = { color: 'black'};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -27,6 +30,18 @@ export class EvaluationStartPage {
   resize() {
     this.myInput.nativeElement.style.height = 'auto'
     this.myInput.nativeElement.style.height = this.myInput.nativeElement.scrollHeight + 'px';
+  }
+
+  alternateColor(iconClick){
+    
+    if(iconClick == 'md-thumbs-up'){
+      this.mdThumbsUp.color   = 'green';
+      this.mdThumbsDown.color = 'black';
+    }else{
+      this.mdThumbsDown.color = 'red';
+      this.mdThumbsUp.color   = 'black';
+    }
+  
   }
 
 }
