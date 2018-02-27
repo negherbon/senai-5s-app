@@ -26,17 +26,15 @@
                 <form id="form-evalution-start" (submit)="doEvaluation()">              
                   <ion-list> 
                       <ion-item>
-                          <ion-icon class="evaluation-start-notes-icon" name="md-close-circle"></ion-icon>
-                          <ion-icon class="evaluation-start-notes-icon" name="md-remove-circle"></ion-icon>
-                          <ion-icon class="evaluation-start-notes-icon" name="md-checkmark-circle"></ion-icon>
-                          
+                        <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-up"></ion-icon>    
+                        <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-down"></ion-icon>
                       </ion-item>                 
                       <ion-item>
                         <textarea #myInput class="evaluation-start-description" rows="3" maxLength="200" (keyup)="resize()" placeholder="Descrição"></textarea>                          
                       </ion-item>                      
                       <button ion-button class="button-form" type="submit" col-6 color="secondary">
                         <ion-label>
-                          <ion-icon name="md-send"></ion-icon>  
+                          Próxima
                         </ion-label>
                       </button>
                     </ion-list>
