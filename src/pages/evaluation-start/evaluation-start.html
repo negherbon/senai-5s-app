@@ -24,11 +24,19 @@
               <h2>1 - O ambiente está devidamente iluminado?</h2>  
               <ion-card-content>
                 <form id="form-evalution-start" (submit)="doEvaluation()">              
-                  <ion-list> 
-                      <ion-item>
-                        <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-up"></ion-icon>    
-                        <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-down"></ion-icon>
-                      </ion-item>                 
+                  <ion-list>   
+                      <ion-row>
+                        <ion-col col-06 push-1>
+                          <ion-item>
+                            <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-up" [ngStyle]="{'color': mdThumbsUp.color}" (click)="alternateColor('md-thumbs-up')"></ion-icon>    
+                          </ion-item>
+                        </ion-col>
+                        <ion-col col-06 push-1>
+                          <ion-item>
+                            <ion-icon class="evaluation-start-notes-icon" name="md-thumbs-down" [ngStyle]="{'color': mdThumbsDown.color}" (click)="alternateColor('md-thumbs-down')"></ion-icon>    
+                          </ion-item>
+                        </ion-col>
+                      </ion-row>
                       <ion-item>
                         <textarea #myInput class="evaluation-start-description" rows="3" maxLength="200" (keyup)="resize()" placeholder="Descrição"></textarea>                          
                       </ion-item>                      
