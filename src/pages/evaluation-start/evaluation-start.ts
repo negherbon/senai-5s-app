@@ -17,6 +17,24 @@ export class EvaluationStartPage {
 
   private mdThumbsUp = { color: 'black'};
   private mdThumbsDown = { color: 'black'};
+  private index = 0;
+  private evaluationList = [
+    {
+      question: "1 - O ambiente está devidamente limpo?",
+      note: 0,
+      description: ""
+    },
+    {
+      question: "2 - O ambiente está devidamente organizado?",
+      note: 0,
+      description: ""
+    },
+    {
+      question: "3 - Os objetos no ambiente são realmente úteis?",
+      note: 0,
+      description: ""
+    }
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -44,4 +62,11 @@ export class EvaluationStartPage {
   
   }
 
+  goNext(){
+    this.index++;
+  }
+
+  goPrevious(){
+    this.index--;
+  }
 }
