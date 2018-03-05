@@ -21,7 +21,7 @@ page-evaluation-start {
 
     .evaluation-start-description {
         width: calc(100% - 10px);
-        border: 0;
+        border: 1px solid rgba(142, 150, 142, 0.541);
         border-radius: 0;
         background: transparent;
     }
@@ -30,5 +30,4 @@ page-evaluation-start {
         font-size: 60px;
         font-size: 60px
     }
-
 }
