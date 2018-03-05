@@ -1,5 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { GenerateActionPlanPage } from '../generate-action-plan/generate-action-plan';
+
 
 /**
  * Generated class for the EvaluationStartPage page.
@@ -68,5 +70,9 @@ export class EvaluationStartPage {
 
   goPrevious(){
     this.index--;
+  }
+
+  viewActionPlan(){
+    this.navCtrl.push(GenerateActionPlanPage);
   }
 }
