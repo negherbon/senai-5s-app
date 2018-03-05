@@ -36,21 +36,30 @@
                       </ion-row>
                       <ion-item>
                         <textarea #myInput class="evaluation-start-description" rows="3" maxLength="200" (keyup)="resize()" placeholder="Descrição"></textarea>                          
-                      </ion-item>                      
-                      <div *ngIf="index<2">
-                        <button ion-button class="button-form" col-6 color="secondary"  (click)="goNext()">
+                      </ion-item>
+                      <ion-row>
+                        <div *ngIf="index>=1" col-12>
+                          <button ion-button class="button-form" col-6 color="secondary"  (click)="goPrevious()">
+                            <ion-label>
+                              Voltar
+                            </ion-label>
+                          </button>
+                        </div>
+                        <div *ngIf="index<2" col-12>
+                          <button ion-button class="button-form" col-6 color="secondary"  (click)="goNext()">
+                            <ion-label>
+                              Próxima
+                            </ion-label>
+                          </button>
+                        </div>
+                      </ion-row>    
+                      <div *ngIf="index==2">
+                        <button ion-button class="button-form" col-10 color="secondary"  (click)="viewActionPlan()">
                           <ion-label>
-                            Próxima
+                            Plano de Ação
                           </ion-label>
                         </button>
-                    </div>
-                    <div *ngIf="index==2">
-                        <button ion-button class="button-form" col-10 color="secondary"  (click)="goNext()">
-                          <ion-label>
-                            Gerar Plano de Ação
-                          </ion-label>
-                        </button>
-                    </div>
+                      </div>                  
                     </ion-list>
                 </form>
               </ion-card-content>      
