@@ -14,13 +14,16 @@ import { EvaluationResumePage } from '../evaluation-resume/evaluation-resume'
   selector: 'page-dashboard',
   templateUrl: 'dashboard.html'
 })
-export class DashboardPage {
+export class  DashboardPage {
+
+  private nav : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.nav = navCtrl;
   }
 
   goToEvaluationResume(){
-    this.navCtrl.push(EvaluationResumePage);
+    this.nav.push(EvaluationResumePage);
   }
 
   ionViewDidLoad() {

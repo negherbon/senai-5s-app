@@ -20,8 +20,9 @@ import { MainPage } from '../main/main';
 export class LoginPage {
 
   private loading: any;
-  private loginData = { email:'', password:'' };
+  private loginData = { email:'', password:'', profile:'' };
   private data: any;
+  private page: any;
 
   constructor(
     public  navCtrl    : NavController, 
@@ -41,7 +42,9 @@ export class LoginPage {
       this.loading.dismiss();
       this.data = result;
       localStorage.setItem('token', this.data.token);
-      this.navCtrl.setRoot(MainPage);
+      console.log("perfil ", this.loginData.profile);
+      this.page = new MainPage(this.loginData.profile);
+      this.navCtrl.setRoot(this.page);
     }, (err) => {
       this.loading.dismiss();     
       
@@ -75,6 +78,10 @@ export class LoginPage {
     });
 
     toast.present();
+  }
+
+  requestDashboard(){
+
   }
 
 }

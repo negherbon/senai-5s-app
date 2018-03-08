@@ -16,7 +16,24 @@ import { UserConfigPage } from '../user-config/user-config'
   templateUrl: 'footer-tabs.html',
 })
 export class FooterTabsPage {
+  
+  private profile : string;
+  private dashBoard : any;
+  private nav : any;
+  private navParam : any
 
-  dashBoardPage = DashboardPage;
+  constructor(public paramProfile:string){
+    this.profile = paramProfile;
+    this.dashBoard = this.switchDashboard();
+    this.nav = NavController;
+    this.navParam = NavParams
+  }
+
+  switchDashboard(){
+    if(this.profile == '0'){ console.log("perfil Avaliador"); return new DashboardPage(this.nav, this.navParam);  }
+    if(this.profile == '1'){ return UserConfigPage; } 
+  }
+
+  dashBoardPage  = this.dashBoard;
   userConfigPage = UserConfigPage;
 }
