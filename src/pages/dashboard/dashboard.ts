@@ -16,14 +16,10 @@ import { EvaluationResumePage } from '../evaluation-resume/evaluation-resume'
 })
 export class  DashboardPage {
 
-  private nav : any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.nav = navCtrl;
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   goToEvaluationResume(){
-    this.nav.push(EvaluationResumePage);
+    this.navCtrl.push(EvaluationResumePage);
   }
 
   ionViewDidLoad() {

@@ -4,6 +4,7 @@ import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { DashboardPage } from '../dashboard/dashboard';
 import { MainPage } from '../main/main';
+import { User } from '../../model/user';
 
 /**
  * Generated class for the LoginPage page.
@@ -22,7 +23,6 @@ export class LoginPage {
   private loading: any;
   private loginData = { email:'', password:'', profile:'' };
   private data: any;
-  private page: any;
 
   constructor(
     public  navCtrl    : NavController, 
@@ -39,12 +39,13 @@ export class LoginPage {
   doLogin() {
     this.showLoader();
     this.authService.login(this.loginData).then((result) => {
+      
       this.loading.dismiss();
       this.data = result;
+      User.profile = Number(this.loginData.profile);
       localStorage.setItem('token', this.data.token);
-      console.log("perfil ", this.loginData.profile);
-      this.page = new MainPage(this.loginData.profile);
-      this.navCtrl.setRoot(this.page);
+      this.navCtrl.setRoot(MainPage);
+    
     }, (err) => {
       this.loading.dismiss();     
       

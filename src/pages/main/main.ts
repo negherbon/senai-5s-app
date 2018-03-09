@@ -16,13 +16,5 @@ import { FooterTabsPage } from '../footer-tabs/footer-tabs';
 })
 export class MainPage {
 
-  private profile : string;
-  private footerPage : any;
-
-  constructor(public paramProfile : string) {
-    this.profile = paramProfile;
-    this.footerPage = new FooterTabsPage(this.profile);
-  }
-
-  footerTabs:any = this.footerPage;
+  footerTabs = FooterTabsPage;
 }
