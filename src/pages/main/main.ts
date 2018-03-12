@@ -16,5 +16,5 @@ import { FooterTabsPage } from '../footer-tabs/footer-tabs';
 })
 export class MainPage {
 
-  footerTabs:any = FooterTabsPage;
+  footerTabs = FooterTabsPage;
 }

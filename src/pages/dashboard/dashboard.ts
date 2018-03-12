@@ -14,10 +14,9 @@ import { EvaluationResumePage } from '../evaluation-resume/evaluation-resume'
   selector: 'page-dashboard',
   templateUrl: 'dashboard.html'
 })
-export class DashboardPage {
+export class  DashboardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   goToEvaluationResume(){
     this.navCtrl.push(EvaluationResumePage);
