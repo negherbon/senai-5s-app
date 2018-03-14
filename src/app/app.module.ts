@@ -16,6 +16,8 @@ import { ForgotPasswordPageModule } from '../pages/forgot-password/forgot-passwo
 import { LoginPageModule } from '../pages/login/login.module';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { ResponsibleDashboardPage } from '../pages/responsible-dashboard/responsible-dashboard';
+import { ExecuteActionPlanPage } from '../pages/execute-action-plan/execute-action-plan';
 import { FooterTabsPage } from '../pages/footer-tabs/footer-tabs';
 import { EvaluationsPage } from '../pages/evaluations/evaluations';
 import { EvaluationResumePage } from '../pages/evaluation-resume/evaluation-resume'
@@ -31,11 +33,13 @@ import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
     LoginPage,
     ForgotPasswordPage,
     DashboardPage,
+    ResponsibleDashboardPage,
     FooterTabsPage,
     EvaluationsPage,
     EvaluationResumePage,
     EvaluationStartPage,
     GenerateActionPlanPage,
+    ExecuteActionPlanPage,
     UserConfigPage,
     MainPage
   ],
@@ -51,6 +55,8 @@ import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
     LoginPage,
     ForgotPasswordPage,
     DashboardPage,
+    ResponsibleDashboardPage,
+    ExecuteActionPlanPage,
     FooterTabsPage,
     EvaluationsPage,
     EvaluationStartPage,
