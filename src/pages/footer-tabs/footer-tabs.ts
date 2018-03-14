@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DashboardPage } from '../dashboard/dashboard';
+import { ResponsibleDashboardPage } from '../responsible-dashboard/responsible-dashboard';
 import { UserConfigPage } from '../user-config/user-config'
 import { User } from '../../model/user';
 import { ProfileEnums } from '../../enums/profileEnums';
@@ -21,7 +22,7 @@ export class FooterTabsPage {
   
   getDashboardByProfile(){
     if( User.profile === ProfileEnums.AVALIADOR   ) { return DashboardPage;  }
-    if( User.profile === ProfileEnums.RESPONSAVEL ) { return UserConfigPage; }
+    if( User.profile === ProfileEnums.RESPONSAVEL ) { return ResponsibleDashboardPage; }
   }
 
   dashBoardPage  = this.getDashboardByProfile();
