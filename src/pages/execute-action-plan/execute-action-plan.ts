@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit, Renderer, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,11 +15,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ExecuteActionPlanPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  accordionExapanded = false;
+  @ViewChild("answers") answers: any;
+  icon: string = "arrow-forward";
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public renderer: Renderer) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExecuteActionPlanPage');
+  }
+
+  toggleAccordion() {
+    if (this.accordionExapanded) {
+      this.renderer.setElementStyle(this.answers.nativeElement, "max-height", "0px");
+      this.renderer.setElementStyle(this.answers.nativeElement, "padding", "0px 16px");
+
+    } else {
+      this.renderer.setElementStyle(this.answers.nativeElement, "max-height", "500px");
+      this.renderer.setElementStyle(this.answers.nativeElement, "padding", "13px 16px");
+
+    }
+
+    this.accordionExapanded = !this.accordionExapanded;
+    this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
   }
 
 }
