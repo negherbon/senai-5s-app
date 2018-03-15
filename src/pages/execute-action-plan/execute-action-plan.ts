@@ -15,30 +15,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ExecuteActionPlanPage {
 
-  accordionExapanded = false;
-  @ViewChild("answers") answers: any;
-  icon: string = "arrow-forward";
+  items: any = [];
+  itemExpandHeight: number = 100;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public renderer: Renderer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.items = [
+      {expanded: false},
+      {expanded: false}
+    ];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExecuteActionPlanPage');
   }
 
-  toggleAccordion() {
-    if (this.accordionExapanded) {
-      this.renderer.setElementStyle(this.answers.nativeElement, "max-height", "0px");
-      this.renderer.setElementStyle(this.answers.nativeElement, "padding", "0px 16px");
+  expandItem(item){
+    this.items.map((listItem) => {
 
-    } else {
-      this.renderer.setElementStyle(this.answers.nativeElement, "max-height", "500px");
-      this.renderer.setElementStyle(this.answers.nativeElement, "padding", "13px 16px");
+        if(item == listItem){
+            listItem.expanded = true;
+        } else {
+            listItem.expanded = false;
+        }
 
-    }
+        return listItem;
 
-    this.accordionExapanded = !this.accordionExapanded;
-    this.icon = this.icon == "arrow-forward" ? "arrow-down" : "arrow-forward";
+    }); 
   }
 
 }

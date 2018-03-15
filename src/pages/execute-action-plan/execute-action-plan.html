@@ -21,46 +21,27 @@
           Executar Plano de Ação
         </ion-card-header>
         <ion-card-content>
-          <ion-row>
+          <ion-row *ngFor="let item of items">
               <ion-col col-12 col-sm-6> 
-                <div (click)="toggleAccordion()">
+                <div (click)="expandItem(item)">
                   <h2 style="color: red">1 - O ambiente está devidamente organizado?</h2>
                 </div>
-                <ion-card>
-                  <ion-card-content class="answers" #answers>
-                    <ion-list radio-group>
-                      <ion-item>
-                        <ion-label>Sim</ion-label>
-                        <ion-radio value="1" [checked]="true"></ion-radio>
-                      </ion-item>
-                      <ion-item>
-                        <ion-label>Não</ion-label>
-                        <ion-radio value="2"></ion-radio>
-                      </ion-item>
-                    </ion-list>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col col-12 col-sm-6> 
-                <div (click)="toggleAccordion()">
-                  <h2 style="color: red">1 - O ambiente está devidamente organizado?</h2>
-                </div>
-                <ion-card>
-                  <ion-card-content class="answers" #answers>
-                    <ion-list radio-group>
-                      <ion-item>
-                        <ion-label>Sim</ion-label>
-                        <ion-radio value="1" [checked]="true"></ion-radio>
-                      </ion-item>
-                      <ion-item>
-                        <ion-label>Não</ion-label>
-                        <ion-radio value="2"></ion-radio>
-                      </ion-item>
-                    </ion-list>
-                  </ion-card-content>
-                </ion-card>
+                <expandable [expandHeight]="itemExpandHeight" [expanded]="item.expanded">
+                    <ion-card>
+                      <ion-card-content>
+                        <ion-list radio-group>
+                          <ion-item>
+                            <ion-label>Sim</ion-label>
+                            <ion-radio value="1" [checked]="true"></ion-radio>
+                          </ion-item>
+                          <ion-item>
+                            <ion-label>Não</ion-label>
+                            <ion-radio value="2"></ion-radio>
+                          </ion-item>
+                        </ion-list>
+                      </ion-card-content>
+                    </ion-card>
+                </expandable>
               </ion-col>
           </ion-row>
           <button ion-button class="button-form" col-12 color="secondary">
