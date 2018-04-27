@@ -6,16 +6,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule  } from '@angular/http';
 import { ChartsModule } from 'ng2-charts';
 
-
 import { MyApp } from './app.component';
 
 import { LoginPage } from '../pages/login/login';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password'
-
 import { ForgotPasswordPageModule } from '../pages/forgot-password/forgot-password.module';
 import { LoginPageModule } from '../pages/login/login.module';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { ResponsibleDashboardPage } from '../pages/responsible-dashboard/responsible-dashboard';
+import { ExecuteActionPlanPage } from '../pages/execute-action-plan/execute-action-plan';
 import { FooterTabsPage } from '../pages/footer-tabs/footer-tabs';
 import { EvaluationsPage } from '../pages/evaluations/evaluations';
 import { EvaluationResumePage } from '../pages/evaluation-resume/evaluation-resume'
@@ -23,6 +23,9 @@ import { EvaluationStartPage } from '../pages/evaluation-start/evaluation-start'
 import { GenerateActionPlanPage } from '../pages/generate-action-plan/generate-action-plan';
 import { UserConfigPage } from '../pages/user-config/user-config';  
 import { MainPage } from '../pages/main/main';
+
+import { ExpandableComponent } from '../components/expandable/expandable'
+
 import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
 
 @NgModule({
@@ -31,13 +34,16 @@ import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
     LoginPage,
     ForgotPasswordPage,
     DashboardPage,
+    ResponsibleDashboardPage,
     FooterTabsPage,
     EvaluationsPage,
     EvaluationResumePage,
     EvaluationStartPage,
     GenerateActionPlanPage,
+    ExecuteActionPlanPage,
     UserConfigPage,
-    MainPage
+    MainPage,
+    ExpandableComponent
   ],
   imports: [
     BrowserModule,
@@ -51,13 +57,16 @@ import { ConsumesApiProvider } from '../providers/consumes-api/consumes-api';
     LoginPage,
     ForgotPasswordPage,
     DashboardPage,
+    ResponsibleDashboardPage,
+    ExecuteActionPlanPage,
     FooterTabsPage,
     EvaluationsPage,
     EvaluationStartPage,
     UserConfigPage,
     EvaluationResumePage,
     GenerateActionPlanPage,
-    MainPage
+    MainPage,
+    ExpandableComponent
   ],
   providers: [
     StatusBar,
