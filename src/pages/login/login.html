@@ -38,38 +38,10 @@
                       </ion-label>
                       <ion-input type="password" [(ngModel)]="loginData.password" name="password"></ion-input>
                     </ion-item>
-                    <!--ion-item>
-                      <ion-label>Perfil</ion-label>
-                      <ion-select  [(ngModel)]="loginData.profile" name="profile">
-                        <ion-option value="0">Avaliador</ion-option>
-                        <ion-option value="1">Responsável</ion-option>
-                      </ion-select>
-                    </ion-item>
-                    
-                    <ion-col>
-                      <ion-item>
-                        Selecione o seu Perfil
-                      </ion-item>
-                    </ion-col>
-                    <ion-row radio-group>
-                      <ion-col col-6>
-                        <ion-item>
-                          <ion-label>Responsável</ion-label>
-                          <ion-radio value="0"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                      <ion-col col-6>
-                        <ion-item>
-                         <ion-label>Avaliador</ion-label>
-                          <ion-radio value="1"></ion-radio>
-                        </ion-item>
-                      </ion-col>
-                    </ion-row-->
 
                     <ion-label>
                       Selecione o seu Perfil
-                    </ion-label>
-              
+                    </ion-label> 
                     <ion-list radio-group [(ngModel)]="loginData.profile" name="profile">
                       <ion-item>
                         <ion-label>Avaliador</ion-label>
