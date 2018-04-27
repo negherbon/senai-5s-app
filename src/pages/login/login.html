@@ -12,7 +12,7 @@
 
 </ion-header>
 
-<ion-content padding style="background-color: #3c9a7b">
+<ion-content padding style="background-color: #95c195">
   
   <ion-grid>
     <ion-row>
@@ -38,14 +38,27 @@
                       </ion-label>
                       <ion-input type="password" [(ngModel)]="loginData.password" name="password"></ion-input>
                     </ion-item>
-                    <ion-item>
-                      <ion-label>Perfil</ion-label>
-                      <ion-select  [(ngModel)]="loginData.profile" name="profile">
-                        <ion-option value="0">Avaliador</ion-option>
-                        <ion-option value="1">Responsável</ion-option>
-                      </ion-select>
-                    </ion-item>
-                    <button ion-button class="button-form" type="submit" col-6 color="secondary">
+                    <ion-col>
+                      <ion-item>
+                        Selecione o seu Perfil
+                      </ion-item>
+                    </ion-col>
+                    <ion-row radio-group>
+                      <ion-col col-12>
+                        <ion-item>
+                          <ion-label>Responsável</ion-label>
+                          <ion-radio value="0"></ion-radio>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col col-12>
+                        <ion-item>
+                         <ion-label>Avaliador</ion-label>
+                          <ion-radio value="1"></ion-radio>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+
+                    <button ion-button class="button-form" type="submit" col-12 color="secondary">
                       <ion-label>
                          Entrar
                       </ion-label>
