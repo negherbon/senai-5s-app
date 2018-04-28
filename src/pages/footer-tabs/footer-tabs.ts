@@ -19,10 +19,10 @@ import { ProfileEnums } from '../../enums/profileEnums';
   templateUrl: 'footer-tabs.html',
 })
 export class FooterTabsPage {
-  
+
   getDashboardByProfile(){
-    if( User.profile === ProfileEnums.AVALIADOR   ) { return DashboardPage;  }
-    if( User.profile === ProfileEnums.RESPONSAVEL ) { return ResponsibleDashboardPage; }
+    if( User.profile === 'avaliador'   ) { return DashboardPage;  }
+    if( User.profile === 'responsavel' ) { return ResponsibleDashboardPage; }
   }
 
   dashBoardPage  = this.getDashboardByProfile();
