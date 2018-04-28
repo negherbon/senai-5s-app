@@ -21,7 +21,7 @@ import { User } from '../../model/user';
 export class LoginPage {
 
   private loading: any;
-  private loginData = { email:'', password:'', profile:'' };
+  private user = { email:'', password:'', profile:'' };
   private data: any;
 
   constructor(
@@ -38,11 +38,11 @@ export class LoginPage {
 
   doLogin() {
     this.showLoader();
-    this.authService.login(this.loginData).then((result) => {
+    this.authService.login(this.user).then((result) => {
       
       this.loading.dismiss();
       this.data = result;
-      User.profile = Number(this.loginData.profile);
+      User.profile = this.user.profile; 
       localStorage.setItem('token', this.data.token);
       this.navCtrl.setRoot(MainPage);
     

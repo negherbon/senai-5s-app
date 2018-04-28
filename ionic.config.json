@@ -2,5 +2,7 @@
   "name": "senai-5s-app",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
